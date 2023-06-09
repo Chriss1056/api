@@ -1,2 +1,14 @@
+name: build api
+
 on:
-    workflow-dispatch:
+    workflow_dispatch:
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        steps:
+        - uses: actions/checkout@v3
+        
+        - uses: actions/setup-node@v2.5.2
+          with:
+            node-version: 18.16.0
