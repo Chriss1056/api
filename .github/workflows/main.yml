@@ -1,12 +1,14 @@
-name: build api
+name: test api
 
 on:
     workflow_dispatch:
     
 jobs:
-    build:
+    test:
         runs-on: windows-latest
+
         steps:
+          
         - uses: actions/checkout@v3
         
         - uses: actions/setup-node@v2.5.2
