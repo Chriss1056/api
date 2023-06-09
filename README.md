@@ -1,3 +1,7 @@
+# HTL Ball Backend Ticket API
+
+Build Status der API: [![build api](https://github.com/Chriss1056/api/actions/workflows/main.yml/badge.svg)](https://github.com/Chriss1056/api/actions/workflows/main.yml)
+
 ## Running the app
 
 ```bash
