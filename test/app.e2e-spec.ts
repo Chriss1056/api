@@ -17,8 +17,13 @@ describe('AppController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+      .get('/ball-api/test')
+      .expect(200);
+  });
+  
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/ball-api/ticket-status')
+      .expect(200);
   });
 });
