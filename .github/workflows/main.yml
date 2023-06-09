@@ -14,7 +14,6 @@ jobs:
             node-version: 18.16.0
 
         - run: npm ci
-        - run: npm init
         - run: npm i -g @nestjs/cli
 
         - run: npm run test:cov
