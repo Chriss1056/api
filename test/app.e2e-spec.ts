@@ -17,13 +17,31 @@ describe('AppController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/ball-api/test')
+      .get('/test')
       .expect(200);
   });
   
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/ball-api/ticket-status')
+      .get('/ticket-status')
+      .expect(200);
+  });
+
+  it('/ (PUT)', () => {
+    return request(app.getHttpServer())
+      .put('/ticket-reserve')
+      .expect(200);
+  });
+
+  it('/ (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/push-order/:id')
+      .expect(201);
+  });
+
+  it('/ (DELETE)', () => {
+    return request(app.getHttpServer())
+      .delete('/delete-order/:id')
       .expect(200);
   });
 });
