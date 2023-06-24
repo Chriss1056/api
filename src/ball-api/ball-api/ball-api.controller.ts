@@ -1,5 +1,5 @@
-import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { stringify } from 'querystring';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { pushOrderDTO } from '../ball-api-dtos/ball-api.dto';
 
 @Controller()
 export class BallApiController {
@@ -51,7 +51,7 @@ export class BallApiController {
     }
 
     @Post('push-order/:id')
-    pushNewOrder() {
+    pushNewOrder(@Param('id') id: string, @Body() pushParams: pushOrderDTO) {
         return [
             { 
                 func_name: 'push-order@ID',
@@ -59,6 +59,8 @@ export class BallApiController {
                 func_description: 'This function is used to push a new order to the Database via an identification number.'
             },
             {
+                id,
+                pushParams,
                 response: 'ERR_SUCCESS'
             }
         ]
